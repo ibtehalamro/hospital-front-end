@@ -1,0 +1,24 @@
+.landing-page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  & .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    gap: 1rem;
+    & .btn {
+      height: 2rem;
+    }
+
+    & .register-btn {
+      background-color: blue;
+      color: white;
+    }
+  }
+}

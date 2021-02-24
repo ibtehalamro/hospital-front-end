@@ -1,0 +1,180 @@
+@import "config";
+
+.person-form-wrapper {
+  padding: 1rem;
+
+  .form-heading {
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    &::after {
+      content: '';
+      border: 1px solid #969294;
+      height: 0;
+      width: 100vw;
+      position: absolute;
+      top: 50%;
+      margin-left: .3rem;
+    }
+  }
+
+  & .server-error {
+    color: red;
+    font-size: 1rem;
+    position: relative;
+    padding: .2rem .2rem .1rem 1rem;
+
+
+    animation: enter ease-in-out 1s;
+
+    &::before {
+      content: "";
+      height: 9px;
+      width: 9px;
+      left: 0;
+      top: 29%;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    &::first-letter {
+      text-transform: capitalize;
+
+    }
+
+    @keyframes enter {
+      from {
+        background-color: #9b9b9b;
+        border-radius: 10%;
+
+      }
+      to {
+        background-color: unset;
+      }
+
+    }
+
+  }
+
+
+}
+
+.form-group-wrapper {
+
+  margin: 1rem;
+  padding: 1rem;
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: stretch;
+  flex-direction: column;
+
+
+  @include desktop-laptop {
+    flex-direction: row;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #d0d0d0;
+    width: 77vw;
+    bottom: 0;
+    background-color: darkblue;
+  }
+}
+
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //padding: .4rem;
+  margin-right: .4rem;
+  margin-bottom: .4rem;
+
+  *{
+    width: 45%;
+  }
+
+  label {
+    padding: .5rem 0 .5rem 0;
+    font-weight: 500;
+  }
+
+  :nth-child(2){
+    height: 2rem;
+
+  }
+
+  @include desktop-laptop {
+    *{
+      width: unset;
+    }
+    width: 25%;
+    flex-grow: 1;
+    flex-direction: column;
+
+  }
+  .invalid-feedback {
+
+    color: #ee0606;
+
+    &::before {
+      content: "";
+    }
+  }
+}
+
+.table {
+  border: 1px solid black;
+  table-layout: fixed;
+  width: 60vw;
+
+  th,
+  td {
+    border: 1px solid black;
+    width: 100px;
+    overflow: hidden;
+  }
+
+  .big {
+    width: 40%;
+    color: red;
+    background-color: #011422;
+  }
+
+
+}
+
+
+.pagination {
+
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+
+  li {
+    list-style: none;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    background: gray;
+    margin: .5rem;
+    padding: .3rem;
+    cursor: pointer;
+    font-weight: bold;
+
+  }
+
+
+}
+

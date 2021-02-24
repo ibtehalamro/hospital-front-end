@@ -1,0 +1,184 @@
+@import "config";
+
+.header-wrapper {
+  background: $header-gradiant;
+  display: grid;
+  grid-template-rows: max-content max-content;
+  grid-template-columns:  1fr;
+  grid-template-areas: 'icon''links';
+  grid-column-gap: 70vw;
+
+  align-items: center;
+  justify-content: center;
+
+  .icons {
+    grid-area: icon;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    .main-icon {
+      margin-top: .5rem;
+    }
+
+    .arrow-button {
+      display: block;
+      height: auto;
+      width: 4rem;
+      position: relative;
+      transition: all ease .5s;
+
+      &::before {
+        content: '';
+        display: block;
+        top: 50%;
+        width: 2rem;
+        height: .4rem;
+        background-color: #1F1F1F;
+        position: absolute;
+        transform: rotate(45deg) translatey(-50%);
+        transition: all ease .5s;
+
+      }
+
+      &::after {
+        top: 50%;
+
+        content: '';
+        display: block;
+        width: 2rem;
+        height: .4rem;
+        background-color: #1F1F1F;
+        position: absolute;
+
+        transition: all ease .5s;
+        transform: rotate(-45deg) translatey(-50%);;
+        left: 1.5rem;
+      }
+
+      @include desktop-laptop {
+        display: none;
+      }
+    }
+  }
+
+  @include desktop-laptop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-direction: column;
+    height: 100vh;
+
+    padding: unset;
+
+  }
+
+
+}
+
+.header-links {
+  z-index: 100; /* To prevent click through the links*/
+
+  grid-area: links;
+
+  padding: .5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+  display: flex;
+  opacity: 0;
+  @include desktop-laptop {
+    opacity: 1;
+  }
+  animation: slide-bottom .5s cubic-bezier(.25, .46, .45, .94) both;
+  background-color: #d9e0e0;
+  //left: 0;
+  //right: 0;
+  bottom: auto;
+margin-top: auto;
+  margin-bottom: auto;
+
+  .hide {
+    opacity: 1;
+  }
+
+  @keyframes slide-bottom {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 100%;
+    }
+  }
+  @include desktop-laptop {
+    z-index: unset;
+    animation: unset;
+    position: relative;
+    background-color: inherit;
+
+  }
+
+
+  &.hide {
+    display: none;
+    @include desktop-laptop {
+      display: flex;
+    }
+  }
+
+  .header-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 1.5rem;
+    transition: all ease 0.5s;
+    padding: .8rem;
+
+    transition-delay: .1s;
+
+    img {
+      margin-right: .8rem;
+      width: $icons-size-medium;
+    }
+
+    h4 {
+      color: $main-text-color;
+      transition: all ease 0.5s;
+      transition-delay: .1s;
+      white-space: nowrap;
+    }
+
+    /*header-item*/
+
+    .active {
+      margin: .5rem 0 .5rem 0;
+      background: #FFFFFF;
+      box-shadow: 2px 2px 10px #807c7c;
+
+      h4 {
+        color: red;
+      }
+
+    }
+
+    &:hover {
+
+      background: #f3f2f2;
+      box-shadow: 2px 2px 5px #5d5b5b;
+
+      h4 {
+        color: red;
+        font-size: 1.1em;
+      }
+    }
+  }
+
+
+}

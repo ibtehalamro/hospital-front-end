@@ -1,0 +1,32 @@
+//this file will have all variables, functions and mixins
+
+//color variables
+$main-text-color:#1F1F1F;
+
+
+//text variables
+$text-size-small:.8rem;
+$text-size-normal:1rem;
+$text-size-medium:1.2rem;
+
+//icon sizes variables
+$main-icon-size-medium:2.5rem;
+$icons-size-medium:1.3rem;
+
+
+//gradients
+$header-gradiant:linear-gradient(180deg, #DAEDC9 0%, #DDE2E3 49.48%, #EBECED 100%);
+
+
+//Mixins
+
+$desktop-laptop:840px;
+
+@mixin  desktop-laptop{
+
+  @media (min-width: #{$desktop-laptop}) {
+    @content
+  }
+}
+
+

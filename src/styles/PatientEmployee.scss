@@ -1,0 +1,362 @@
+@import "config";
+
+
+.person-wrapper {
+
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .person-component-buttons {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: .5rem;
+
+    background-color: rgba(71, 71, 71, 0.5);
+
+
+    .btn-primary {
+      height: 4rem;
+      width: 32%;
+      font-weight: 700;
+
+      border-radius: 10px;
+      background-color: #f6f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem;
+
+      @include desktop-laptop {
+        font-weight: 700;
+        width: 20%;
+      }
+    }
+  }
+
+  /*person-component-buttons */
+
+  .person-components {
+    width: 100%;
+
+
+    //patient-form-wrapper
+
+
+    .find-person-form-wrapper {
+
+      background-color: rgb(198, 209, 210);
+      padding: 3rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+      .find-person-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .employees-list-find-wrapper{
+        width: 50%;
+        table{width: 100%;}
+      }
+    }
+  }
+
+  /*person-components*/
+}
+
+.person-information-wrapper {
+
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows:max-content 1fr;
+  grid-auto-columns: 1fr;
+  grid-template-areas: 'bio''data';
+
+grid-gap: 2rem;
+
+  @include desktop-laptop {
+    grid-template-rows: 1fr;
+    grid-auto-columns: 3fr 1fr;
+    grid-template-areas: 'data bio';
+  }
+
+  .person-information-data-wrapper {
+    background-color: #dbdbdb;
+    grid-area: data;
+
+    .patient-invoices-wrapper {
+      padding: 2rem;
+      .patient-invoices {
+        margin-top: 1.5rem;
+        th {
+          background: #acb5b3;
+          color: #010318;
+          letter-spacing: .05em;
+        }
+
+        .hasDept {
+          background: #ff8d8d;
+        }
+      }
+.warning{
+margin-top: 1rem;
+  text-decoration: underline;
+}
+      .total {
+margin: 2rem;
+        .item {
+          width: 12rem;
+          display: flex;
+          justify-content: space-between;
+          align-content: baseline;
+          margin: 1rem 1rem 1rem 0;
+          position: relative;
+          padding-bottom: 5px;
+
+          &::after {
+            position: absolute;
+
+            content: "";
+            border-bottom: 2px double black;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+          }
+        }
+
+        font-weight: 700;
+      }
+
+    }
+
+
+  }
+
+  .person-bio-wrapper {
+    grid-area: bio;
+    padding: 1rem;
+    background-color: #dddcdc;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+
+    .person-name-date {
+
+      height: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+
+    }
+
+    .edit-buttons {
+      margin: 1rem 0 1rem 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      width: 100%;
+
+
+    }
+
+    .details {
+
+      width: 100%;
+
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+
+      .line {
+
+        margin: .4rem;
+        padding: .3rem;
+        width: inherit;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        :first-child {
+          color: gray;
+        }
+
+      }
+    }
+
+  }
+
+
+}
+
+
+.cards-table-wrapper {
+
+  margin: 0 .1rem;
+  padding: 2rem 1rem;
+  @include desktop-laptop {
+
+    margin: 0 2rem;
+    padding: 2rem 6rem;
+  }
+}
+
+.person-card-wrapper {
+
+  margin-bottom: .7rem;
+
+  width: 100%;
+
+  background-color: #ffffff;
+  box-shadow: 0 3px 4px gray;
+
+  display: grid;
+  grid-template-rows: 4.5rem 4rem;
+
+  grid-template-columns: 5rem 1fr;
+  grid-template-areas: 'icon main''secondary secondary';
+
+  padding: .5rem 2rem .5rem 2rem;
+
+  @include desktop-laptop {
+    grid-template-rows: 6rem;
+    grid-template-areas: 'icon main secondary';
+    grid-template-columns: 6rem 1fr 20%;
+    padding: .5rem 2rem .5rem 2rem;
+
+  }
+
+  & > :not(.icon-wrapper) {
+    position: relative;
+    @include desktop-laptop {
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 80%;
+        background: #011422;
+        opacity: 40%;
+        left: -1rem;
+        border: 1px solid #262524;
+      }
+    }
+
+  }
+
+  * {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+  }
+
+  .icon-wrapper {
+    grid-area: icon;
+    width: 3rem;
+    height: 3rem;
+    margin: auto 0;
+
+    padding: .2rem;
+    background-color: #c6c6c6;
+    border-radius: 50%;
+
+
+    img {
+      width: 2rem;
+      padding: .2rem;
+      margin: auto;
+      filter: drop-shadow(1px 1px 1px rgba(45, 44, 44, 0.7));
+    }
+  }
+
+  .main {
+
+    grid-area: main;
+
+    .last-visit {
+      position: relative;
+      padding-left: 2ch;
+      color: #737373;
+
+      &::before {
+        left: 0;
+        position: absolute;
+        content: "";
+        background-image: url("../asset/icons/clock.svg");
+        width: 1rem;
+        background-size: .8rem 1rem;
+        display: inline-block;
+        height: 1rem;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .secondary {
+
+    grid-area: secondary;
+
+    .item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-direction: row;
+
+
+      :first-child {
+        color: #676666;
+
+      }
+
+      :last-child {
+        color: #969292;
+
+      }
+
+      .more {
+        position: relative;
+        margin-left: auto;
+        color: #011422;
+        font-weight: 700;
+        text-decoration: underline;
+        line-height: 1.5rem;
+
+        &::after {
+          position: absolute;
+          right: -2.5ch;
+          top: 50%;
+          transform: translate(-45%, -45%);
+          content: ">>";
+
+        }
+      }
+
+    }
+
+  }
+}
+
+
+.patients-list-find-wrapper {
+
+}

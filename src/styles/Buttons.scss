@@ -1,0 +1,58 @@
+input[type='submit'] {
+  background-color: lightseagreen;
+  padding: .7rem;
+  width: 100%;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.small-button{
+  width: 100%;
+  margin: .3rem;
+  padding: .2rem;
+  text-align: center;
+
+}
+.medium-button{
+  width: 100%;
+  margin: .3rem;
+  padding: .2rem;
+  text-align: center;
+
+}
+.large-button{
+  width: 100%;
+  margin: .3rem;
+  padding: .5rem;
+  text-align: center;
+font-weight: bolder;
+}
+
+.edit-button{
+    background-color: #ffffff;
+  border: 1px solid black;
+}
+
+.delete-button {
+  background-color: #fda3a3;
+  border: 1px solid red;
+  transition: all linear .1s;
+  &:hover{
+    filter: brightness(110%);
+    color:black;
+    font-weight: bold;
+  }
+}
+.round-edge-button{
+  border-radius: 20%;
+}
+
+[class="delete-button"]{
+
+}
+.person{
+&:hover{
+  filter: brightness(200%);
+}
+
+}
